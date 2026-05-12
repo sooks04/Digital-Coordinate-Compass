@@ -1,4 +1,4 @@
-# Smart Campus Navigator 🧭
+# Smart Campus Navigator
 
 **An IoT Edge-to-Cloud Wayfinding Device** *Built for EEC 172 at UC Davis*
 
@@ -6,7 +6,7 @@ The Smart Campus Navigator is a custom hardware and cloud-integrated IoT device 
 
 ---
 
-## 🌟 Features
+##  Features
 * **Cloud-Synced GPS:** Fetches the user's live GPS coordinates from an AWS IoT Device Shadow, updated dynamically via a mobile web app and AWS Lambda.
 * **Real-Time Orientation:** Utilizes a BNO055 9-DOF IMU polling at 10 Hz to determine the user's physical magnetic heading.
 * **Dynamic Wayfinding:** Calculates real-time distance (in miles) and relative bearing to the target destination using flat-earth approximation mathematics.
@@ -15,14 +15,14 @@ The Smart Campus Navigator is a custom hardware and cloud-integrated IoT device 
 
 ---
 
-## 🛠️ Hardware Requirements
+##  Hardware Requirements
 * **Microcontroller:** Texas Instruments CC3200 LaunchPad
 * **Display:** Adafruit 1.5" Color OLED (SSD1351)
 * **Compass:** Adafruit BNO055 9-DOF Absolute Orientation IMU
 * **Input:** 38kHz IR Receiver Diode & Handheld IR Remote
 * **Misc:** Breadboard, jumper wires, micro-USB cable
 
-## 💻 Software & Cloud Stack
+##  Software & Cloud Stack
 * **Firmware:** C (Texas Instruments Code Composer Studio / CC3200 SDK)
 * **Libraries:** `driverlib`, `simplelink`, custom Adafruit_GFX port
 * **Cloud Compute:** AWS Lambda (Python 3, Boto3)
@@ -31,7 +31,7 @@ The Smart Campus Navigator is a custom hardware and cloud-integrated IoT device 
 
 ---
 
-## 🏗️ System Architecture
+##  System Architecture
 
 1. **Frontend:** A user opens the HTML web app on their phone, which grabs their current GPS coordinates and sends an HTTP POST request.
 2. **AWS Lambda:** The Lambda function parses the coordinates and updates the `desired` state of the CC3200's AWS IoT Device Shadow.
@@ -42,9 +42,9 @@ The Smart Campus Navigator is a custom hardware and cloud-integrated IoT device 
 
 ---
 
-## 🔌 Pin Mapping & Wiring Guide
+##  Pin Mapping & Wiring Guide
 
-**⚠️ Important:** Ensure your OLED Chip Select (CS) is wired to Pin 58 to prevent SPI/Interrupt collisions with the IR Receiver!
+** Important:** Ensure your OLED Chip Select (CS) is wired to Pin 58 to prevent SPI/Interrupt collisions with the IR Receiver
 
 | Component | CC3200 Pin | Function / Notes |
 | :--- | :--- | :--- |
@@ -62,7 +62,7 @@ The Smart Campus Navigator is a custom hardware and cloud-integrated IoT device 
 
 ---
 
-## 🚀 Setup & Installation
+##  Setup & Installation
 
 ### 1. Cloud Setup (AWS)
 1. Create a "Thing" in AWS IoT Core named `Sukhraj_920857647_CC3200`.
@@ -86,7 +86,7 @@ The Smart Campus Navigator is a custom hardware and cloud-integrated IoT device 
 
 ---
 
-## 👥 Authors
+##  Authors
 * **Tobias Albano** ([tjalbano@ucdavis.edu](mailto:tjalbano@ucdavis.edu))
 * **Sukhraj Johal** ([ssjohal@ucdavis.edu](mailto:ssjohal@ucdavis.edu))
 
